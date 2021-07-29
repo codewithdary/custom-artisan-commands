@@ -51,9 +51,10 @@ php artisan migrate
 ```
 
 # Create custom Artisan command <br>
-If you perform ```php artisan list```, you’ll find a complete list of Artisan commands that you can perform. If you scroll up to the ```make``` section, you’ll see that the third command is a ```make:command```, which will create a new artisan command for you. <br>
+If you perform ```php artisan list```, you’ll find a complete list of Artisan commands that you can perform. If you scroll up to the ```make``` section, you’ll see that the third command is a ```make:command```, which will create a new artisan command for you. Perform the following two commands to create two custom Artisan commands. <br>
 ```
 php artisan make:command CreateNewProduct
+php artisan make:command ShowAllProducts
 ```
 
 This will create a new class inside the ```~/app/Console/Commands``` folder called CreateNewProduct.php. 
