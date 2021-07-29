@@ -31,7 +31,7 @@ php artisan make:model Product -m; <br>
 ```
 
 Open the products migration inside the ~/database/migrations folder and replace the up() method with
-```
+```ruby
 public function up()
 {
     Schema::create('products', function (Blueprint $table) {
