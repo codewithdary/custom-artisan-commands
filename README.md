@@ -65,6 +65,12 @@ protected $signature = 'create:product';
 protected $description = 'Create a new product through Artisan';
 ```
 
+**OPTIONAL - ** Or you can add the ```$signature``` directly in the command 
+```
+php artisan make:command CreateNewProduct --command=create:product
+php artisan make:command ShowAllProducts --command=show:product
+```
+
 Since we’re not working with an interface but with the CLI, we got to make sure that we ask the user for product data. This can be done through the ```ask()``` method
 
 Then, make sure that you import ```App\Models\Product``` since we’re going to use Eloquent to interact with our ```Products``` table
