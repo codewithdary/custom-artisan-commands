@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbcc32b7-f8a1-47f3-8252-3014c962085d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/CreateNewProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/CreateNewProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ShowAllProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ShowAllProducts.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +175,7 @@
       <workItem from="1627219189833" duration="72000" />
       <workItem from="1627561806563" duration="7244000" />
       <workItem from="1627590583705" duration="1485000" />
+      <workItem from="1627593198844" duration="277000" />
     </task>
     <servers />
   </component>

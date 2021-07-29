@@ -38,20 +38,22 @@ class ShowAllProducts extends Command
      */
     public function handle()
     {
-//        $headers = ['id', 'title', 'original_price', 'in_stock', 'status', 'Created at', 'Updated at'];
-//        $data = Product::all()->toArray();
-//        $this->table($headers, $data);
+        //The table() method makes it simple to create ASCII tables full of your data. It accepts two parameters, the headers, and the data itself.
+        //$headers = ['id', 'title', 'original_price', 'in_stock', 'status', 'Created at', 'Updated at'];
+        //$data = Product::all()->toArray();
+        //$this->table($headers, $data);
 
+        //If you have ever run the npm install command, you've seen a command-line progress bar. Let's create one ourselves!
         $count = Product::all()->toArray();
-        $this->output->progressStart(count($count));
+        $this->output->progressStart(count($count)); //Will start the progress bar
 
         for ($i = 0; $i < count($count); $i++)
         {
-            sleep(1);
-            print_r($count);
-            $this->output->progressAdvance();
+            sleep(1); //will delay the execution of the current script with 1 second
+            print_r($count); //Print the product that will be looped over.
+            $this->output->progressAdvance(); //Increment every iteration.
         }
 
-        $this->output->progressFinish();
+        $this->output->progressFinish(); //Makes sure that it knows when it needs to stop
     }
 }

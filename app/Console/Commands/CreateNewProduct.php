@@ -54,5 +54,7 @@ class CreateNewProduct extends Command
 
         //Return a message back to the user
         $this->info('Product has been created!');
+        // $this->>comment('This will print out a orange message');
+        // $this->>error('This will print out a red message');
     }
 }
