@@ -8,6 +8,7 @@ The following documentation is based on this tutorial I’ve created which will 
 ## Usage <br>
 Clone the repository <br>
 ```
+cd custom-artisan-commands
 Composer install
 cp .env.example .env 
 php artisan key:generate
