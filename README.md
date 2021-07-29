@@ -90,9 +90,15 @@ public function handle()
 }
 ```
 
-We have also created a new Custom artisan command inside  ```~/app/Console/Commands/ShowAllProducts.php``` which will show all products from the ```Products`` table.
+We have also created a new Custom artisan command inside  ```~/app/Console/Commands/ShowAllProducts.php``` which will show all products from the ```Products``` table.
 
-Instead of printing them out as an array, we’re going to use the table() method to create a simple ASCII table full of your data.
+Make sure that you change up the ```$signature``` and the ```$description``` of the ```ShowAllProducts.php```
+```ruby
+protected $signature = 'show:product';
+protected $description = 'Show all products through Artisan';
+```
+
+Instead of printing the output as an array, we’re going to use the table() method to create a simple ASCII table full of your data.
 ```ruby
 public function handle()
 {
@@ -100,4 +106,18 @@ public function handle()
     $data = Product::all()->toArray();
     $this->table($headers, $data);
 }
+```
+
+Run the command inside the CLI
+```
+php artisan show:product
+```
+
+Example output
+```ruby
++----+-----------+----------------+----------+--------+-----------------------------+-----------------------------+
+| id | title     | original_price | in_stock | status | Created at                  | Updated at                  |
++----+-----------+----------------+----------+--------+-----------------------------+-----------------------------+
+| 1  | iPhone 12 | 799            | 1       | 0       | 2021-07-29T12:58:28.000000Z | 2021-07-29T12:58:28.000000Z |
++----+-----------+----------------+----------+--------+-----------------------------+-----------------------------+
 ```
