@@ -57,18 +57,18 @@ php artisan make:command CreateNewProduct
 php artisan make:command ShowAllProducts
 ```
 
+**OPTIONAL - ** Or you can add the ```$signature``` directly in the command 
+```
+php artisan make:command CreateNewProduct --command=create:product
+php artisan make:command ShowAllProducts --command=show:product
+```
+
 This will create a two classes inside the ```/app/Console/Commands``` folder called CreateNewProduct.php and ShowAllProducts.php. Let's focus on the CreateNewProduct.php file first
 
 The ```$signature``` property will be the Artisan command that you need to run inside the CLI to use the command and the ```$description``` will be the description of the custom command. Let’s change it to the following
 ```ruby
 protected $signature = 'create:product';
 protected $description = 'Create a new product through Artisan';
-```
-
-**OPTIONAL - ** Or you can add the ```$signature``` directly in the command 
-```
-php artisan make:command CreateNewProduct --command=create:product
-php artisan make:command ShowAllProducts --command=show:product
 ```
 
 Since we’re not working with an interface but with the CLI, we got to make sure that we ask the user for product data. This can be done through the ```ask()``` method
