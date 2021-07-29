@@ -68,18 +68,24 @@ Since we’re not working with an interface but with a command line interface, w
 
 Then, make sure that you import ```App\Models\Product``` since we’re going to use Eloquent to interact with our ```Products``` table.
 ```ruby
-$title = $this->ask('What is the product title?: ');
-$original_price = $this->ask('What is the product price?: ');
-$stock = $this->ask('Is the product in stock?: ');
-$status = $this->ask('What is the product status?: ');
+    public function handle()
+    {
+        //Ask questions through the CLI
+        $title = $this->ask('What is the product title?: ');
+        $original_price = $this->ask('What is the product price?: ');
+        $stock = $this->ask('Is the product in stock?: ');
+        $status = $this->ask('What is the product status?: ');
 
-Product::create([
-    'title' => $title,
-    'original_price' => $original_price,
-    'in_stock' => $stock,
-    'status' => $status
-]);
-
-$this->info('Product has been created!');
+        //Use Eloquent to create a new Product through the CLI
+        Product::create([
+            'title' => $title,
+            'original_price' => $original_price,
+            'in_stock' => $stock,
+            'status' => $status
+        ]);
+        
+        //Return a message back to the user
+        $this->info('Product has been created!');
+    }
 ```
 
