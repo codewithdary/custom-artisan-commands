@@ -63,3 +63,24 @@ The ```$signature``` property will be the Artisan command that you need to run i
 protected $signature = 'create:product';
 protected $description = 'Create a new product through Artisan';
 ```
+
+Since we’re not working with an interface but with a command line interface, we got to make sure that we interact with the user. This can be done through the ```ask()``` method.
+
+Then, make sure that you import ```App\Models\Product``` since we’re going to use Eloquent to interact with our ```Products``` table.
+```ruby
+$title = $this->ask('What is the product title?: ');
+$original_price = $this->ask('What is the product price?: ');
+$stock = $this->ask('Is the product in stock?: ');
+$status = $this->ask('What is the product status?: ');
+
+Product::create([
+    'title' => $title,
+    'original_price' => $original_price,
+    'in_stock' => $stock,
+    'status' => $status
+]);
+
+$this->info('Product has been created!');
+```
+![image](https://user-images.githubusercontent.com/63154066/127563369-6567fc69-23b7-4d50-ab43-cfcb6db399d8.png)
+
