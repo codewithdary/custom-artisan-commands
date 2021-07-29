@@ -45,6 +45,11 @@ public function up()
 }
 ```
 
+Obviously, don't forget to migrate your tables :).
+```
+php artisan migrate
+```
+
 # Create custom Artisan command <br>
 If you perform ```php artisan list```, you’ll find a complete list of Artisan commands that you can perform. If you scroll up to the ```make``` section, you’ll see that the third command is a ```make:command```, which will create a new artisan command for you. <br>
 ```
