@@ -30,7 +30,7 @@ Create a model & migration to interact with the database
 php artisan make:model Product -m; 
 ```
 
-Open the products migration inside the ```~/database/migrations``` folder and replace the ```up()``` method with
+Open the products migration inside the ```/database/migrations``` folder and replace the ```up()``` method with
 ```ruby
 public function up()
 {
@@ -57,7 +57,7 @@ php artisan make:command CreateNewProduct
 php artisan make:command ShowAllProducts
 ```
 
-This will create a two classes inside the ```~/app/Console/Commands``` folder called CreateNewProduct.php and ShowAllProducts.php. Let's focus on the CreateNewProduct.php file first
+This will create a two classes inside the ```/app/Console/Commands``` folder called CreateNewProduct.php and ShowAllProducts.php. Let's focus on the CreateNewProduct.php file first
 
 The ```$signature``` property will be the Artisan command that you need to run inside the CLI to use the command and the ```$description``` will be the description of the custom command. Let’s change it to the following
 ```ruby
@@ -87,7 +87,7 @@ public function handle()
 }
 ```
 
-We have also created a new Custom artisan command inside  ```~/app/Console/Commands/``` folder which will show all products from the ```Products``` table.
+We have also created a new Custom artisan command inside  ```/app/Console/Commands/``` folder which will show all products from the ```Products``` table.
 
 Make sure that you change up the ```$signature``` and the ```$description``` of the ```ShowAllProducts.php```
 ```ruby
