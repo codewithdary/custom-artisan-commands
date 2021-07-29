@@ -44,4 +44,3 @@ public function up()
     });
 }
 ```
-![image](https://user-images.githubusercontent.com/63154066/127561540-3e079bbe-be2a-4f29-93de-b155031df1f2.png)
