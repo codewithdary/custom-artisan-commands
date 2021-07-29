@@ -36,10 +36,10 @@ public function up()
 {
     Schema::create('products', function (Blueprint $table) {
         $table->id();
-        $table->string( 'title' );
-        $table->double( 'original_price' );
-        $table->tinyInteger( 'in_stock' )->default( 1 );
-        $table->tinyInteger( 'status' )->default( 0 );
+        $table->string('title');
+        $table->double('original_price');
+        $table->tinyInteger('in_stock')->default( 1 );
+        $table->tinyInteger('status')->default( 0 );
         $table->timestamps();
     });
 }
