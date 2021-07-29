@@ -137,8 +137,8 @@ This can be done in two different ways. The easiest one, and in my opinion the m
 use Illuminate\Support\Facades\Artisan;
 ```
 
-Then inside your code, you can either use ```Artisan::call()``` or the ```Artisan::queue()``. Both methods take one required and one optional parameter
-•   First parameter will be the terminal command
+Then inside your code, you can either use ```Artisan::call()``` or the ```Artisan::queue()``. Both methods take one required and one optional parameter<br>
+•   First parameter will be the terminal command<br>
 •	Second parameter will be an array of parameters to pass it
 
 ```ruby
