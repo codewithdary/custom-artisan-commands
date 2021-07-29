@@ -143,7 +143,7 @@ Then inside your code, you can either use ```Artisan::call()``` or the ```Artisa
 
 ```ruby
 Artisan::call('show:product');
-Artisan::queue(‘show:product’);
+Artisan::queue('show:product');
 ```
 
 # Credits due where credits due…
