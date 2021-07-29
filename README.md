@@ -30,7 +30,7 @@ Create a database migration with a migration by adding the -m flag.
 php artisan make:model Product -m; <br>
 ```
 
-Open the products migration inside the ```**~/database/migrations**``` folder and replace the up() method with
+Open the products migration inside the ```~/database/migrations``` folder and replace the up() method with
 ```ruby
 public function up()
 {
