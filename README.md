@@ -120,4 +120,4 @@ Example output
 ```
 
 # Credits due where credits due…
-Thanks to Laravel for giving me the opportunity to make this tutorial on [Artisan Console](https://laravel.com/docs/8.x/artisan). I would also like to thank the Tailwind developers for giving us an incredible CSS framework which made my life as a content creator, a lot easier.
+Thanks to [Laravel](https://laravel.com/) for giving me the opportunity to make this tutorial on [Artisan Console](https://laravel.com/docs/8.x/artisan). 
