@@ -38,8 +38,8 @@ public function up()
         $table->id();
         $table->string('title');
         $table->double('original_price');
-        $table->tinyInteger('in_stock')->default( 1 );
-        $table->tinyInteger('status')->default( 0 );
+        $table->tinyInteger('in_stock')->default(1);
+        $table->tinyInteger('status')->default(0);
         $table->timestamps();
     });
 }
@@ -51,13 +51,15 @@ php artisan migrate
 ```
 
 # Create custom Artisan command <br>
-If you perform ```php artisan list``` inside the CLI, you’ll find a complete list of Artisan commands that you can perform. If you scroll up to the ```make``` section, you’ll see that the third command is a ```make:command```, which will create a new artisan command for you. Perform the following two commands to create two custom Artisan commands that we will be using in this tutorial. <br>
+If you perform ```php artisan list``` inside the CLI, you’ll find a complete list of Artisan commands that you can perform. If you scroll up to the ```make``` section, you’ll see that the third command is a ```make:command```, which will create a new artisan command for you. 
+
+Perform the following two commands to create two custom Artisan commands that we will be using in this tutorial. <br>
 ```
 php artisan make:command CreateNewProduct
 php artisan make:command ShowAllProducts
 ```
 
-**OPTIONAL - ** Or you can add the ```$signature``` directly in the command 
+Or you can add the ```$signature``` property directly in the command 
 ```
 php artisan make:command CreateNewProduct --command=create:product
 php artisan make:command ShowAllProducts --command=show:product
@@ -95,13 +97,13 @@ public function handle()
 
 We have also created a new Custom artisan command inside  ```/app/Console/Commands/``` folder which will show all products from the ```Products``` table.
 
-Make sure that you change up the ```$signature``` and the ```$description``` of the ```ShowAllProducts.php```
+Make sure that you change up the ```$signature``` and the ```$description``` of the ```ShowAllProducts.php``` file
 ```ruby
 protected $signature = 'show:product';
 protected $description = 'Show all products through Artisan';
 ```
 
-Instead of printing the output as an array, we’re going to use the table() method to output a simple ASCII table full of your data.
+Instead of printing the output as an array, we’re going to use the table() method to output a simple ASCII table full of your data
 ```ruby
 public function handle()
 {
@@ -123,6 +125,25 @@ Example output
 +----+-----------+----------------+----------+--------+-----------------------------+-----------------------------+
 | 1  | iPhone    | 799            | 1       | 0       | 2021-07-29T12:58:28.000000Z | 2021-07-29T12:58:28.000000Z |
 +----+-----------+----------------+----------+--------+-----------------------------+-----------------------------+
+```
+
+# Calling Artisan commands in normal code
+
+There might be a case where you need to run your Artisan commands in either a controller of the web.php file. 
+
+This can be done in two different ways. The easiest one, and in my opinion the most recommended one is using the ```Artisan Facade```. 
+
+```
+use Illuminate\Support\Facades\Artisan;
+```
+
+Then inside your code, you can either use ```Artisan::call()``` or the ```Artisan::queue()``. Both methods take one required and one optional parameter
+•   First parameter will be the terminal command
+•	Second parameter will be an array of parameters to pass it
+
+```ruby
+Artisan::call('show:product');
+Artisan::queue(‘show:product’);
 ```
 
 # Credits due where credits due…
