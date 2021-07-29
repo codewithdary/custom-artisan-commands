@@ -20,9 +20,9 @@ php artisan serve
 
 Make sure that you have setup your database credentials since we’re going to pull in data from the database <br>
 ```
-mysql; <br>
-create database [DATABASE NAME] 
-exit <br>
+mysql;
+create database [DATABASE NAME];
+exit
 ```
 
 Create a database migration with a migration by adding the -m flag.
