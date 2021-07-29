@@ -82,5 +82,4 @@ Product::create([
 
 $this->info('Product has been created!');
 ```
-![image](https://user-images.githubusercontent.com/63154066/127563369-6567fc69-23b7-4d50-ab43-cfcb6db399d8.png)
 
