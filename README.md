@@ -58,5 +58,3 @@ The ```$signature``` property will be the Artisan command that you need to run i
 protected $signature = 'create:product';
 protected $description = 'Create a new product through Artisan';
 ```
-![image](https://user-images.githubusercontent.com/63154066/127562663-9bb782ca-587c-455f-bb3f-df873d19f03a.png)
-
