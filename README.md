@@ -1,6 +1,6 @@
 ## How to create custom Artisan Commands
 
-The following documentation is based on this tutorial I’ve created which will show you how to create two custom Artisan commands. The ```create:product``` commands makes a new product, and the ```show:product``` command will interact with Eloquent to pull in all products from the database. <br>
+The following documentation is based on this tutorial I’ve created which will show you how to create two custom Artisan commands. The ```create:product``` commands makes a new product, and the ```show:product``` command will interact with Eloquent to pull in all products from the database. <br> <br>
 •	Author: Code With Dary <br>
 •	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
 •	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
