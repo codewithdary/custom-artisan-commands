@@ -93,7 +93,7 @@ public function handle()
 We have also created a new Custom artisan command inside  ```~/app/Console/Commands/ShowAllProducts.php``` which will show all products from the ```Products`` table.
 
 Instead of printing them out as an array, we’re going to use the table() method to create a simple ASCII table full of your data.
-```
+```ruby
 public function handle()
 {
     $headers = ['id', 'title', 'original_price', 'in_stock', 'status', 'Created at', 'Updated at'];
