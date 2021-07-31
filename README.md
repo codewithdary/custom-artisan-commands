@@ -1,6 +1,6 @@
 ## How to create custom Artisan Commands
 
-The following documentation is based on this tutorial I’ve created which will show you how to create two custom Artisan commands. The ```create:product``` commands makes a new product, and the ```show:product``` command will interact with Eloquent to pull in all products from the database. <br> <br>
+The following documentation is based on this tutorial I’ve created which will show you how to create two custom Artisan commands. The ```create:product``` command makes a new product, and the ```show:product``` command will interact with Eloquent to pull in all products from the database. <br> <br>
 •	Author: Code With Dary <br>
 •	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
 •	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
@@ -8,8 +8,9 @@ The following documentation is based on this tutorial I’ve created which will 
 ## Usage <br>
 Clone the repository <br>
 ```
+git clone git@github.com:codewithdary/custom-artisan-commands.git
 cd custom-artisan-commands
-Composer install
+composer install
 cp .env.example .env 
 php artisan key:generate
 php artisan cache:clear && php artisan config:clear 
@@ -18,7 +19,7 @@ php artisan serve
 
 ## Database <br>
 
-Make sure that you have setup your database credentials correctly since we’re going to pull in data from the database <br>
+Make sure that you have setup your database credentials correctly in the ```.env``` file since we’re going to pull in data from the database <br>
 ```
 mysql;
 create database [DATABASE NAME];
@@ -51,9 +52,9 @@ php artisan migrate
 ```
 
 # Create custom Artisan command <br>
-If you perform ```php artisan list``` inside the CLI, you’ll find a complete list of Artisan commands that you can perform. If you scroll up to the ```make``` section, you’ll see that the third command is a ```make:command```, which will create a new artisan command for you. 
+If you perform ```php artisan list``` inside the CLI, you’ll find a complete list of Artisan commands that you can perform. If you scroll up to the ```make``` section, you’ll see that the third command is ```make:command```, which will create a new artisan command for you
 
-Perform the following two commands to create two custom Artisan commands that we will be using in this tutorial. <br>
+Perform the following two commands to create two custom Artisan commands that we will be using in this tutorial <br>
 ```
 php artisan make:command CreateNewProduct
 php artisan make:command ShowAllProducts
@@ -97,7 +98,7 @@ public function handle()
 
 We have also created a new Custom artisan command inside  ```/app/Console/Commands/``` folder which will show all products from the ```Products``` table.
 
-Make sure that you change up the ```$signature``` and the ```$description``` of the ```ShowAllProducts.php``` file
+Make sure that you change up the ```$signature``` and the ```$description``` of the ```ShowAllProducts.php``` file to the following:
 ```ruby
 protected $signature = 'show:product';
 protected $description = 'Show all products through Artisan';
@@ -129,17 +130,15 @@ Example output
 
 # Calling Artisan commands in normal code
 
-There might be a case where you need to run your Artisan commands in either a controller of the web.php file. 
-
-This can be done in two different ways. The easiest one, and in my opinion the most recommended one is using the ```Artisan Facade```. 
+There might be a case where you need to run your Artisan commands in either a controller of the web.php file. This can be done in two different ways. The easiest one, and in my opinion the most recommended one is using the ```Artisan Facade```
 
 ```
 use Illuminate\Support\Facades\Artisan;
 ```
 
-Then inside your code, you can either use ```Artisan::call()``` or the ```Artisan::queue()``. Both methods take one required and one optional parameter<br>
-•   First parameter will be the terminal command<br>
-•	Second parameter will be an array of parameters to pass it
+Then inside your code, you can either use ```Artisan::call()``` or the ```Artisan::queue()```. Both methods take one required and one optional parameter<br>
+•   First parameter will be the terminal command **[REQUIRED]**<br>
+•	Second parameter will be an array of parameters to pass it **[OPTIONAL]**
 
 ```ruby
 Artisan::call('show:product');
