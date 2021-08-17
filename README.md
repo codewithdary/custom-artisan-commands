@@ -28,7 +28,7 @@ exit;
 
 Create a model & migration to interact with the database
 ```
-php artisan make:model Product -m; 
+php artisan make:model Product -m;
 ```
 
 Open the products migration inside the ```/database/migrations``` folder and replace the ```up()``` method with
